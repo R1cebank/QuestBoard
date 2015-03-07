@@ -15,13 +15,12 @@ default:
       - jquery/dist/jquery.js
       - underscore/underscore.js
       - angular/angular.js
-
       - ngstorage/ngStorage.js
       - angular-ui-router/release/angular-ui-router.js
       - angular-bootstrap/ui-bootstrap-tpls.js
       - angular-bootstrap/ui-bootstrap.js
     stylesheets:
-      
+
     fonts:
 
     assets:
@@ -37,6 +36,7 @@ development:
 
   # Development-specific scripts to inject
   scripts:
+    - ng/app.js
     - index.js
 
   # Development-specific stylesheets

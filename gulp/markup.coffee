@@ -32,6 +32,6 @@ module.exports = (gulp, config) ->
       config.stylesheets = ['lib/bower.css'].concat config._stylesheets
 
     # Process markup
-    gulp.src ['src/**/*.jade', '!**/*.part.jade'], base: './'
+    gulp.src ['src/**/*.jade', '!**/*.part.jade'], base: './src'
       .pipe jade locals: config
       .pipe gulp.dest config.paths.dest
