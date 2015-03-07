@@ -8,3 +8,9 @@ angular.module 'Questboard.web.routes', []
       templateUrl: 'views/login/login.html',
       controller: 'LoginController'
     )
+    .state(
+      'home',
+      url: '/home',
+      templateUrl: 'views/home/home.html',
+      controller: 'HomeController'
+    )

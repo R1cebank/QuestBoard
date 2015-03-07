@@ -13,6 +13,7 @@ angular.module 'Questboard.web', [
   'Questboard.web.directives'
 
   'Questboard.web.views.login'
+  'Questboard.web.views.home'
 
 ]
 

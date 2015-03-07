@@ -47,6 +47,7 @@ development:
     - shared/shared.js
     - shared/navbar/navbar.js
     - views/login/login.js
+    - views/home/home.js
     - index.js
 
   # Development-specific stylesheets
