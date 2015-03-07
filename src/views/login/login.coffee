@@ -1,5 +1,5 @@
 angular.module 'Questboard.web.views.login', []
-.controller 'LoginController', ($scope, QbData) ->
+.controller 'LoginController', ($scope, $state, QbData) ->
 
   # Login form multistate
   $scope.loginForm =
@@ -22,7 +22,11 @@ angular.module 'Questboard.web.views.login', []
   # Submit login form
   $scope.login = ->
     QbData.login $scope.credentials
-      .success (data) -> console.log data
+      .success (data) -> $state.go 'home'
       .error (data) ->
         $scope.loginForm.state 'shake'
         $scope.credentials.password = ''
+
+  $scope.guest = ->
+    QbData.login()
+    $state.go 'home'

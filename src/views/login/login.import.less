@@ -57,6 +57,32 @@
     }
   }
 
+  .btn-primary {
+    .hoverable(@brand-primary);
+    border: 1px solid #999;
+  }
+
+  .celtic-sep {
+    position: relative;
+    margin: 30px auto;
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 45%;
+      top: 50%;
+      background: #FFF;
+    }
+    &:before { left: 0; }
+    &:after { right: 0; }
+    img.glyph {
+      max-width: 35px;
+      max-height: (35 / 503) * 281px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
 }
 
 @media (max-width: @screen-xs-max) {

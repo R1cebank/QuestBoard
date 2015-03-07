@@ -1,0 +1,17 @@
+.hoverable(@bg) {
+  background: @bg;
+  &:hover, &:focus {
+    background: darken(@bg, 5%);
+  }
+  &:active {
+    background: darken(@bg, 10%);
+  }
+  &:focus {
+    outline: 0;
+    outline: none;
+    box-shadow: none;
+  }
+  &[disabled], &.disabled {
+    background: desaturate(@bg, 70%);
+  }
+}
