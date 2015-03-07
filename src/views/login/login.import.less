@@ -7,8 +7,8 @@
     position: relative;
 
     max-width: 500px;
-    margin: 0 auto;
-    margin-top: 180px;
+    margin-left: auto;
+    margin-right: auto;
 
     //background: fadeout(white, 90%);
 
@@ -24,7 +24,7 @@
       margin: 0 auto;
 
       input {
-        border-width: 2px;
+        //border-width: 2px;
         position: relative;
         z-index: 0;
         border-color: #999;
@@ -53,23 +53,22 @@
     .btn.btn-block {
       max-width: 360px;
       margin: 0 auto;
-      margin-top: 30px;
     }
   }
 
   .btn-primary {
     .hoverable(@brand-primary);
     border: 1px solid #999;
+    margin-top: 30px;
   }
 
   .celtic-sep {
     position: relative;
-    margin: 30px auto;
+    margin: 20px auto;
     &:before, &:after {
       content: '';
       position: absolute;
       height: 1px;
-      width: 45%;
       top: 50%;
       background: #FFF;
     }
@@ -87,19 +86,32 @@
 
 @media (max-width: @screen-xs-max) {
 
-  .login-form { padding: 0 10px; }
+  .login-form {
+    margin-top: 60px;
+    padding: 0 10px;
+  }
 
   .login-form .big-logo {
     width: 280px;
     height: (280 / 361) * 84px;
   }
 
+  .login-form .celtic-sep {
+    &:before, &:after { width: 40%; }
+  }
+
 
 }
 
 @media (min-width: @screen-sm-min) {
+  .login-form { margin-top: 180px; }
+
   .login-form .big-logo {
     width: 361px;
     height: 84px;
+  }
+
+  .login-form .celtic-sep {
+    &:before, &:after { width: 45%; }
   }
 }
