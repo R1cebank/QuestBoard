@@ -1,0 +1,29 @@
+{
+  "name": "questboard",
+  "version": "1.0.0",
+  "authors": [
+    "Denis Luchkin-Zhou <wyvernzora@gmail.com>"
+  ],
+  "description": "Questboard Web Portal",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "underscore": "~1.8.2",
+    "angular": "~1.3.14",
+    "angular-ui-router": "~0.2.13",
+    "bootstrap": "~3.3.2",
+    "angular-bootstrap": "~0.12.1",
+    "ngstorage": "~0.3.0"
+  },
+  "resolutions": {
+    "angular": "~1.3.14"
+  }
+}
