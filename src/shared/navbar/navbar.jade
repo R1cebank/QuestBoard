@@ -1,5 +1,8 @@
-nav.navbar.navbar-default.navbar-fixed-top(ng-controller = 'NavbarController')
+nav.navbar.navbar-default.navbar-fixed-top(
+    ng-controller = 'NavbarController',
+    ng-class = '{nonav: ("login" | isState)}'
+  )
   .container-fluid
     .navbar-header
       a.navbar-brand
-        img(src = 'assets/logotype-white.svg')
+        img(qb-no-drag, ng-show = 'loggedIn', src = 'assets/logotype-white.svg')

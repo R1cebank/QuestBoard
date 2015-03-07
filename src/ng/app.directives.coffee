@@ -32,3 +32,21 @@ angular.module 'Questboard.web.directives', []
       # transition
       element.removeClass(scope.classes).addClass(config[name].class)
       if (config[name].callback) then config[name].callback.call(config)
+
+# --------------------------------------------------------------------------- #
+# You shall not drag!!                                                        #
+# --------------------------------------------------------------------------- #
+.directive 'qbNoDrag', ->
+  restrict: 'A'
+  link: (scope, element) ->
+    $(element).on 'dragstart', -> no
+
+# --------------------------------------------------------------------------- #
+# Automatically focus whenever needed.                                        #
+# --------------------------------------------------------------------------- #
+.directive 'qbAutoFocus', ($timeout, $parse) ->
+  restrict: 'A'
+  link: (scope, element, attrs) ->
+    model = $parse(attrs.ckAutoFocus)
+    scope.$watch model, (value) ->
+      if value then $timeout(-> element[0].focus())

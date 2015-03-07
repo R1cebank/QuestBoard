@@ -11,6 +11,11 @@
 @import "views/login/login.import.less";
 @import "views/home/home.import.less";
 
+body {
+  background-image: url(assets/map-bg-2.jpeg);
+  background-size: cover;
+}
+
 // Position ui-view accordingly
 ui-view, [ui-view] {
   position: absolute;
@@ -20,4 +25,7 @@ ui-view, [ui-view] {
   width: 100%;
 
   overflow: hidden;
+
+  transition: all 0.3s ease-out;
+  &.nonav { top: 0; }
 }

@@ -5,5 +5,15 @@
       h2 Hello Drawer!
   
   div(snap-content)
-    h2 Hello Content!
+    .tasklist-header
+      .input-group.input-group-lg
+        input.form-control(type = 'search', placeholder = 'Search')
     
+    ul.tasklist
+      li.post(ng-repeat = 'task in tasks()')
+        .post-info
+          .post-time {{ task.date | ago }}
+          .post-title {{ task.title }}
+          .post-tags
+            span.label.label-default.label-xs(ng-repeat = 'tag in task.tags | limitTo:3') 
+              | {{ tag }}

@@ -10,6 +10,7 @@ angular.module 'Questboard.web', [
   'Questboard.web.routes'
   'Questboard.web.session'
   'Questboard.web.data'
+  'Questboard.web.filters'
   'Questboard.web.directives'
 
   'Questboard.web.views.login'

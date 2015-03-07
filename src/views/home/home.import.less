@@ -1,23 +1,66 @@
 .view#view-home {
 
-  background: #555;
+  background: #E8E8E8;
 
   [snap-drawer] {
-    background: #F0F0F0;
+    background: #E8E8E8;
   }
   [snap-content] {
-    background: #FBFBFB;
+    background: #F3F3F3;
     border-right: 1px solid #DDD;
   }
 
+  .tasklist-header {
+    background: #FBFBFB;
+
+    .input-group { display: block; }
+    .input-group input {
+      border: none;
+      border-bottom: 1px solid #DDD;
+      &:focus { box-shadow: none; }
+    }
+  }
+
+  ul.tasklist {
+    list-style: none;
+    padding: 0;
+
+    > li {
+      .hoverable(#FBFBFB);
+      padding: 15px;
+      border-width: 1px 0 1px 0;
+      border-style: solid;
+      border-color: #DDD;
+      &:first-of-type { border-top: none; }
+      & + li { margin-top: -1px; }
+    }
+  }
+
+  .post {
+    .post-time {
+      font-size: 10px;
+      color: @gray-light;
+    }
+    .post-title {
+      font-size: 16px
+    }
+    .post-tags {
+      margin-top: 4px;
+      .label { background: #AAA; }
+      .label + .label { margin-left: 3px; }
+    }
+  }
 }
 
 @media (max-width: @screen-xs-max) {
-  
+
 }
 
 @media (min-width: @screen-sm-min) {
-  [snap-content] { max-width: 300px; }
+  [snap-content] {
+    max-width: 300px;
+    transform: none!important;
+  }
   .snap-drawer-right {
     left: 300px;
     width: auto;

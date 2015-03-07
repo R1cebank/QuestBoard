@@ -13,6 +13,7 @@ default:
   bower:
     scripts:
       - lil-uuid/uuid.js
+      - moment/moment.js
       - jquery/dist/jquery.js
       - underscore/underscore.js
       - angular/angular.js
@@ -46,6 +47,7 @@ development:
     - ng/app.data.js
     - ng/app.routes.js
     - ng/app.session.js
+    - ng/app.filters.js
     - ng/app.directives.js
     - shared/shared.js
     - shared/navbar/navbar.js
