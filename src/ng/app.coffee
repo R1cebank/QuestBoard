@@ -1,12 +1,16 @@
 angular.module 'Questboard.web', [
 
   'ui.router'
+  'ngStorage'
 
   'Questboard.api'
 
   'Questboard.web.shared'
   'Questboard.web.const'
   'Questboard.web.routes'
+  'Questboard.web.session'
+  'Questboard.web.data'
+  'Questboard.web.directives'
 
   'Questboard.web.views.login'
 

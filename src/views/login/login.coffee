@@ -1,5 +1,14 @@
 angular.module 'Questboard.web.views.login', []
-.controller 'LoginController', ($scope, QbClient) ->
+.controller 'LoginController', ($scope, QbData) ->
+
+  # Login form multistate
+  $scope.loginForm =
+    'shake':
+      class: ''
+      callback: ->
+        @state()
+        $(@element).removeClass('shake').animate nothing:null, 1, ->
+          $(@).addClass('shake')
 
   # Login Model
   $scope.credentials =
@@ -7,10 +16,13 @@ angular.module 'Questboard.web.views.login', []
     password: ''
     remember: yes
 
-  $scope.click = ->
-    #console.log $scope.credentials
-    #QbClient.connect()
-    #QbClient.socket.emit('ping')
-    QbClient.request('login', _.pick $scope.credentials, 'email', 'password')
+  # Detect last user to log in
+  $scope.credentials.email = QbData.getLastUser()
+
+  # Submit login form
+  $scope.login = ->
+    QbData.login $scope.credentials
       .success (data) -> console.log data
-      .error (data) -> console.log data
+      .error (data) ->
+        $scope.loginForm.state 'shake'
+        $scope.credentials.password = ''

@@ -1,6 +1,6 @@
 .view#view-login
   
-  form.login-form(name = 'login-form')
+  form.login-form(name = 'login-form', qb-multistate = 'loginForm')
     
     img.big-logo(src = 'assets/logotype-white.svg')
     
@@ -18,4 +18,4 @@
           ng-model = 'credentials.password'
         )
     
-    button.btn.btn-lg.btn-block.btn-primary(type = 'submit', ng-click = 'click()') LOGIN
+    button.btn.btn-lg.btn-block.btn-primary(type = 'submit', ng-click = 'login()') LOGIN

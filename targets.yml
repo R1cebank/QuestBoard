@@ -40,7 +40,10 @@ development:
     - api/qb.api.js
     - ng/app.js
     - ng/app.const.js
+    - ng/app.data.js
     - ng/app.routes.js
+    - ng/app.session.js
+    - ng/app.directives.js
     - shared/shared.js
     - shared/navbar/navbar.js
     - views/login/login.js
