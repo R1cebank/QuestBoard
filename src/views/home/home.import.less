@@ -1,13 +1,14 @@
 .view#view-home {
 
-  background: #E8E8E8;
+  background: #AAAAAA;
 
   [snap-drawer] {
-    background: #E8E8E8;
+    background: #AAAAAA;
   }
   [snap-content] {
     background: #F3F3F3;
     border-right: 1px solid #DDD;
+    .paper-shadow(1);
   }
 
   .tasklist-header {
@@ -39,7 +40,7 @@
   .post {
     .post-time {
       font-size: 10px;
-      color: @gray-light;
+      color: darken(@brand-primary, 25%);
     }
     .post-title {
       font-size: 16px
@@ -49,6 +50,14 @@
       .label { background: #AAA; }
       .label + .label { margin-left: 3px; }
     }
+  }
+
+  .wind-rose {
+    .square(256px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
   }
 }
 
@@ -77,3 +86,5 @@
   [snap-content] { max-width: 400px; }
   .snap-drawer-right { left: 400px; }
 }
+
+@import "post-detail/post-detail.import.less";

@@ -14,3 +14,9 @@ angular.module 'Questboard.web.routes', []
       templateUrl: 'views/home/home.html',
       controller: 'HomeController'
     )
+    .state(
+      'home.post',
+      url: '/view?post',
+      templateUrl: 'views/home/post-detail/post-detail.html',
+      controller: 'PostDetailController'
+    )

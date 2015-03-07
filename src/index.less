@@ -17,7 +17,8 @@ body {
 }
 
 // Position ui-view accordingly
-ui-view, [ui-view] {
+body > ui-view,
+body > [ui-view] {
   position: absolute;
   top: @navbar-height;
   bottom: 0;

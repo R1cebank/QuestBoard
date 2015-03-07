@@ -1,19 +1,21 @@
 .view#view-home
   
-  div(snap-drawers)
-    div(snap-drawer = 'right')
-      h2 Hello Drawer!
-  
   div(snap-content)
-    .tasklist-header
+    .tasklist-header.clearfix
       .input-group.input-group-lg
         input.form-control(type = 'search', placeholder = 'Search')
     
     ul.tasklist
-      li.post(ng-repeat = 'task in tasks()')
+      li.post(ng-repeat = 'task in tasks()', ui-sref = 'home.post({post: task.postid})')
         .post-info
           .post-time {{ task.date | ago }}
           .post-title {{ task.title }}
           .post-tags
             span.label.label-default.label-xs(ng-repeat = 'tag in task.tags | limitTo:3') 
               | {{ tag }}
+
+              
+  div(snap-drawers)
+    div(snap-drawer = 'right')
+      ui-view
+        img.wind-rose(src = 'assets/wind-rose.svg')

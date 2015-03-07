@@ -1,0 +1,46 @@
+.bounty-letter {
+
+  background: #F1F1F1;
+  height: 600px;
+
+  border-radius: 0;
+  margin: 0;
+  .paper-shadow(1);
+
+  position: relative;
+
+  .corner-ne,
+  .corner-nw { position: absolute; }
+  .corner-ne {
+    right: 30px;
+    top: 30px;
+  }
+  .corner-nw {
+    left: 30px;
+    top: 30px;
+  }
+
+}
+
+@media (max-width: @screen-xs-max) {
+
+
+}
+
+@media (min-width: @screen-sm-min) {
+  
+}
+
+@media (min-width: @screen-md-min) {
+  .bounty-letter {
+    border-radius: 2px;
+    margin: 30px;
+  }
+}
+
+@media (min-width: @screen-lg-min) {
+  .bounty-letter {
+    width: 800px;
+    margin: 30px auto;
+  }
+}

@@ -1,4 +1,6 @@
-angular.module 'Questboard.web.views.home', []
+angular.module 'Questboard.web.views.home', [
+  'Questboard.web.views.home.post-detail'
+]
 .controller 'HomeController', ($scope, snapRemote, QbSession, QbData) ->
 
   snapRemote.disable()
@@ -6,7 +8,7 @@ angular.module 'Questboard.web.views.home', []
   QbSession.guest()
   QbData.loadUserData()
 
-  $scope.tasks = -> QbData.tasks
+  $scope.tasks = -> QbData.posts
 
   $scope.openDrawer = ->
     snapRemote.toggle('right')

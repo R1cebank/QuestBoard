@@ -2,6 +2,7 @@ angular.module 'Questboard.web', [
   'snap'
   'ui.router'
   'ngStorage'
+  'wyvernzora.un-svg'
 
   'Questboard.api'
 
