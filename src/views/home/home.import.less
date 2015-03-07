@@ -1,5 +1,36 @@
 .view#view-home {
 
-  
+  background: #555;
 
+  [snap-drawer] {
+    background: #F0F0F0;
+  }
+  [snap-content] {
+    background: #FBFBFB;
+    border-right: 1px solid #DDD;
+  }
+
+}
+
+@media (max-width: @screen-xs-max) {
+  
+}
+
+@media (min-width: @screen-sm-min) {
+  [snap-content] { max-width: 300px; }
+  .snap-drawer-right {
+    left: 300px;
+    width: auto;
+    right: 0;
+  }
+}
+
+@media (min-width: @screen-md-min) {
+  [snap-content] { max-width: 350px; }
+  .snap-drawer-right { left: 350px; }
+}
+
+@media (min-width: @screen-lg-min) {
+  [snap-content] { max-width: 400px; }
+  .snap-drawer-right { left: 400px; }
 }

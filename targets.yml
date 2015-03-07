@@ -20,8 +20,11 @@ default:
       - angular-ui-router/release/angular-ui-router.js
       - angular-bootstrap/ui-bootstrap-tpls.js
       - angular-bootstrap/ui-bootstrap.js
+      - snapjs/snap.js
+      - angular-snap/angular-snap.js
     stylesheets:
       - bootstrap/dist/css/bootstrap.css
+      - angular-snap/angular-snap.css
     fonts:
 
     assets:

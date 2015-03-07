@@ -1,5 +1,5 @@
 angular.module 'Questboard.web', [
-
+  'snap'
   'ui.router'
   'ngStorage'
 
@@ -66,3 +66,6 @@ angular.module 'Questboard.web', [
 
     $delegate
   return
+
+.config (snapRemoteProvider) ->
+  snapRemoteProvider.globalOptions.disable = 'left'
