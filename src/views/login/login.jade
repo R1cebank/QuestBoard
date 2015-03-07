@@ -6,8 +6,16 @@
     
     .form-group.clearfix
       .input-group.input-group-lg.top
-        input.form-control(type = 'text', placeholder = 'email')
+        input.form-control(
+          type = 'text', 
+          placeholder = 'email', 
+          ng-model = 'credentials.email'
+        )
       .input-group.input-group-lg.bottom
-        input.form-control(type = 'password', placeholder = 'password')
+        input.form-control(
+          type = 'password', 
+          placeholder = 'password', 
+          ng-model = 'credentials.password'
+        )
     
-    button.btn.btn-lg.btn-block.btn-primary LOGIN
+    button.btn.btn-lg.btn-block.btn-primary(type = 'submit', ng-click = 'click()') LOGIN

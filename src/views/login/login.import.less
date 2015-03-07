@@ -14,8 +14,6 @@
 
     .big-logo {
       display: block;
-      width: 361px;
-      height: 84px;
       margin: 30px auto;
     }
 
@@ -59,4 +57,23 @@
     }
   }
 
+}
+
+@media (max-width: @screen-xs-max) {
+
+  .login-form { padding: 0 10px; }
+
+  .login-form .big-logo {
+    width: 280px;
+    height: (280 / 361) * 84px;
+  }
+
+
+}
+
+@media (min-width: @screen-sm-min) {
+  .login-form .big-logo {
+    width: 361px;
+    height: 84px;
+  }
 }

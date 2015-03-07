@@ -12,6 +12,7 @@ default:
   # Bower files to inject into the client HTML page, in order
   bower:
     scripts:
+      - lil-uuid/uuid.js
       - jquery/dist/jquery.js
       - underscore/underscore.js
       - angular/angular.js
@@ -36,6 +37,7 @@ development:
 
   # Development-specific scripts to inject
   scripts:
+    - api/qb.api.js
     - ng/app.js
     - ng/app.const.js
     - ng/app.routes.js
