@@ -20,7 +20,7 @@ default:
       - angular-bootstrap/ui-bootstrap-tpls.js
       - angular-bootstrap/ui-bootstrap.js
     stylesheets:
-
+      - bootstrap/dist/css/bootstrap.css
     fonts:
 
     assets:
@@ -37,6 +37,11 @@ development:
   # Development-specific scripts to inject
   scripts:
     - ng/app.js
+    - ng/app.const.js
+    - ng/app.routes.js
+    - shared/shared.js
+    - shared/navbar/navbar.js
+    - views/login/login.js
     - index.js
 
   # Development-specific stylesheets

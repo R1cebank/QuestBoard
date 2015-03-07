@@ -1,0 +1,22 @@
+
+// Import Bootstrap mixins and variables
+@bootstrap-path: "../bower_components/bootstrap/less";
+@import "@{bootstrap-path}/variables.less";
+@import "@{bootstrap-path}/mixins.less";
+
+// Import Shared Styles
+@import "shared/shared.less";
+
+// Import View-specific styles
+@import "views/login/login.import.less";
+
+// Position ui-view accordingly
+ui-view, [ui-view] {
+  position: absolute;
+  top: @navbar-height;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  overflow: hidden;
+}

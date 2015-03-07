@@ -8,9 +8,9 @@ html
     each url in stylesheets
       link(rel = 'stylesheet', href = url)  
           
-  body(ng-app = 'Questboard.app')
+  body(ng-app = 'Questboard.web')
+    ng-include(src = '"shared/navbar/navbar.html"')
     
-    h1 Hello Questboard!
     
     div(ui-view)
     
