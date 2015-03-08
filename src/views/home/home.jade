@@ -16,4 +16,14 @@
   div(snap-drawers)
     div(snap-drawer = 'right')
       ui-view
-        img.wind-rose(src = 'assets/wind-rose.svg')
+        .post-detail-placeholder
+          img.wind-rose(src = 'assets/wind-rose.svg')
+          p.lead.text-muted.text-center(ng-hide = 'isGuest()')
+            | Welcome back, {{ user().name }}!
+            br
+            | New quests and adventures await you!
+          p.lead.text-muted.text-center(ng-show = 'isGuest()')
+            | Welcome, the strange one!
+            br
+            a(ui-sref = 'home.signup') Sign up
+            |  to embark on new adventures!

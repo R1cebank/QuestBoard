@@ -7,22 +7,22 @@
 <title>qUEST副本</title>
 <desc>Created with Sketch.</desc>
 <g id="Page-1" sketch:type="MSPage">
-	<path fill="#DDDDDD" d="M210,315c-57.897,0-105-47.103-105-105c0-57.897,47.103-105,105-105c57.897,0,105,47.103,105,105
+	<path fill="#AAAAAA" d="M210,315c-57.897,0-105-47.103-105-105c0-57.897,47.103-105,105-105c57.897,0,105,47.103,105,105
 		C315,267.897,267.897,315,210,315z M210,135c-41.355,0-75,33.645-75,75c0,41.355,33.645,75,75,75c41.355,0,75-33.645,75-75
 		C285,168.645,251.355,135,210,135z"/>
 	<g>
-		<path fill="#BBBBBB" d="M210,375c-90.981,0-165-74.019-165-165S119.019,45,210,45s165,74.019,165,165S300.981,375,210,375z
+		<path fill="#F5926C" d="M210,375c-90.981,0-165-74.019-165-165S119.019,45,210,45s165,74.019,165,165S300.981,375,210,375z
 			 M210,75c-74.439,0-135,60.561-135,135s60.561,135,135,135s135-60.561,135-135S284.439,75,210,75z"/>
-		<polygon id="Triangle-1" sketch:type="MSShapeGroup" fill="#BBBBBB" points="210,0 225,60 195,60 		">
+		<polygon id="Triangle-1" sketch:type="MSShapeGroup" fill="#F5926C" points="210,0 225,60 195,60 		">
 		</polygon>
-		<polygon id="Triangle-2" sketch:type="MSShapeGroup" fill="#BBBBBB" points="210,420 225,360 195,360 		">
+		<polygon id="Triangle-2" sketch:type="MSShapeGroup" fill="#F5926C" points="210,420 225,360 195,360 		">
 		</polygon>
-		<polygon id="Triangle-3" sketch:type="MSShapeGroup" fill="#BBBBBB" points="0,210 60,225 60,195 		">
+		<polygon id="Triangle-3" sketch:type="MSShapeGroup" fill="#F5926C" points="0,210 60,225 60,195 		">
 		</polygon>
-		<polygon id="Triangle-4" sketch:type="MSShapeGroup" fill="#BBBBBB" points="420,210 360,195 360,225 		">
+		<polygon id="Triangle-4" sketch:type="MSShapeGroup" fill="#F5926C" points="420,210 360,195 360,225 		">
 		</polygon>
 	</g>
-	<path id="Rectangle-6" sketch:type="MSShapeGroup" fill="#DDDDDD" d="M311.741,324.241l-85.203-85.203L212.75,211.75l27.288,13.788
+	<path id="Rectangle-6" sketch:type="MSShapeGroup" fill="#AAAAAA" d="M311.741,324.241l-85.203-85.203L212.75,211.75l27.288,13.788
 		l86.035,86.035l0,0l10.039-0.917l31.829,31.829l-23.326,2.13l-2.13,23.326l-31.829-31.829L311.741,324.241z M340.612,340.612
 		l2.002,2.002L340.612,340.612z"/>
 </g>

@@ -1,66 +1,4 @@
-.bounty-letter {
-
-  background: #E8E8E8;
-
-  border-radius: 0;
-  margin: 0;
-  .paper-shadow(1);
-
-  position: relative;
-
-  padding: 0 60px;
-  padding-bottom: 30px;
-
-  .corner-ne,
-  .corner-nw {
-    position: absolute;
-    z-index: 0;
-  }
-  .corner-ne {
-    right: 30px;
-    top: 30px;
-  }
-  .corner-nw {
-    left: 30px;
-    top: 30px;
-  }
-
-  h1.post-title {
-    margin-top: 0;
-    text-align: center;
-    font-weight: lighter;
-    padding-top: 32px;
-    text-transform: capitalize;
-  }
-
-  .celtic-sep {
-    position: relative;
-    min-height: 20px;
-    margin: 20px -60px;
-    &:before, &:after {
-      content: '';
-      position: absolute;
-      height: 1px;
-      top: 50%;
-      width: 40%;
-      //background: #AAA;
-    }
-    &:before {
-      left: 30px;
-      background-image: linear-gradient(to left, rgba(170,170,170,1) 0%,rgba(0,0,0,0) 100%);
-    }
-    &:after {
-      right: 30px;
-      background-image: linear-gradient(to right, rgba(170,170,170,1) 0%,rgba(0,0,0,0) 100%);
-    }
-    .glyph {
-      polygon, path { fill: #AAA; }
-      max-width: 35px;
-      max-height: (35 / 503) * 281px;
-      display: block;
-      margin: 0 auto;
-    }
-  }
+.fragment#frag-view-post {
 
   .post-owner {
     img.profile-image {
@@ -87,53 +25,10 @@
         top: 50%;
       }
     }
-
   }
 
   .post-body {
-    h2 {
-      color: @brand-primary;
-      font-size: 16px;
-      font-weight: 300;
-      text-transform: uppercase;
-    }
     .label + .label { margin-left: 5px; }
     p { font-size: 15px; }
-  }
-}
-
-@media (max-width: @screen-xs-max) {
-  .bounty-letter {
-    .post-title { font-size: 24px; }
-  }
-}
-
-@media (min-width: @screen-sm-min) {
-  .bounty-letter {
-    .post-title { font-size: 24px; }
-  }
-}
-
-@media (min-width: @screen-md-min) {
-  .bounty-letter {
-    border-radius: 2px;
-    margin: 30px;
-    .post-title {
-      padding-left: 30px;
-      padding-right: 30px;
-      font-size: 28px;
-    }
-  }
-}
-
-@media (min-width: @screen-lg-min) {
-  .bounty-letter {
-    width: 800px;
-    margin: 30px auto;
-    .post-title {
-      padding-left: 60px;
-      padding-right: 60px;
-      font-size: 32px;
-    }
   }
 }

@@ -1,6 +1,7 @@
 angular.module 'Questboard.web', [
   'snap'
   'ui.router'
+  'ui.bootstrap'
   'ngStorage'
   'wyvernzora.un-svg'
 

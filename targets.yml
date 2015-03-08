@@ -56,10 +56,12 @@ development:
     - views/login/login.js
     - views/home/home.js
     - views/home/post-detail/post-detail.js
+    - views/home/signup/signup.js
     - index.js
 
   # Development-specific stylesheets
   stylesheets:
+    - //code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css
     - index.css
 
 # --------------------------------------------------------------------------- #
@@ -77,4 +79,5 @@ production:
 
   # Production-specific stylesheets to inject
   stylesheets:
+    - //code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css
     - index.css

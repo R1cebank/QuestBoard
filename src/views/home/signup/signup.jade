@@ -1,0 +1,36 @@
+.fragment#frag-signup
+  
+  h1 Signup
+  
+  include ../celtic-sep.part.jade
+  
+  
+  form(name = 'signup', ng-submit = 'submit()')
+    
+    h2.text-center About You
+  
+    .input-group.input-group-lg.clearfix
+      input.form-control(type = 'text', placeholder = 'Name', ng-model = 'data.name', required)
+    
+    .input-group.input-group-lg.clearfix
+      input.form-control(type = 'email', placeholder = 'Email Address', ng-model = 'data.email', required)
+
+    .input-group.input-group-lg.clearfix
+      input.form-control(type = 'tel', placeholder = 'Phone Number', ng-model = 'data.phone', required)
+        
+    h2.text-center Your Password
+        
+    .input-group.input-group-lg.clearfix
+      input.form-control(type = 'password', placeholder = 'Password', ng-model = 'data.pass', required)
+    .input-group.input-group-lg.clearfix
+      input.form-control.share-top(type = 'password', placeholder = 'Verify', ng-model = 'data.verify', compareTo = 'data.pass', required)
+      
+    include ../celtic-sep.part.jade  
+    
+    .errmsg.text-center(ng-class = '{show: errmsg}')
+      span.text-danger {{ errmsg }}
+    
+    .center-buttons
+      button.btn.btn-lg.btn-default(type = 'button', ui-sref = 'home') Cancel
+      button.btn.btn-lg.btn-success(type = 'submit') Submit
+  

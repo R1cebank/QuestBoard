@@ -85,5 +85,15 @@ angular.module 'Questboard.web.directives', []
     # Append the subject
     str += QbGreetings.subs[Math.floor(
       Math.random() * QbGreetings.subs.length)] + '!'
-      
+
     $(element).text(str)
+
+.directive 'compareTo', ->
+  require: 'ngModel'
+  scope:
+    other: '=compareTo'
+  link: (scope, element, attr, model) ->
+    model.$validators.compareTo = (val) ->
+      scope.other is val
+
+    scope.$watch 'other', -> model.$validate()

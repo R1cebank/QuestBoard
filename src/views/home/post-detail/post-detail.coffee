@@ -1,5 +1,6 @@
 angular.module 'Questboard.web.views.home.post-detail', []
-.controller 'PostDetailController', ($scope, $state, $stateParams, QbData, QbSession) ->
+.controller 'PostDetailController',
+($scope, $state, $stateParams, QbData, QbSession) ->
 
   # Go back to /home if post id is unefined
   if not $stateParams.post or not QbData.posts

@@ -1,5 +1,5 @@
 angular.module 'Questboard.web.routes', []
-.config ($stateProvider) ->
+.config ($stateProvider, $urlRouterProvider) ->
 
   $stateProvider
     .state(
@@ -10,16 +10,25 @@ angular.module 'Questboard.web.routes', []
     )
     .state(
       'home',
-      url: '/home',
+      url: '/',
       templateUrl: 'views/home/home.html',
       controller: 'HomeController'
     )
     .state(
       'home.post',
-      url: '/view?post',
+      url: 'view?post',
       templateUrl: 'views/home/post-detail/post-detail.html',
       controller: 'PostDetailController'
     )
+    .state(
+      'home.signup',
+      url: 'signup',
+      templateUrl: 'views/home/signup/signup.html',
+      controller: 'SignupController'
+    )
+
+  $urlRouterProvider.otherwise ''
+
 
 .run ($rootScope, $state) ->
 

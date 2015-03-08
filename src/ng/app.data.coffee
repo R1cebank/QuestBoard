@@ -1,9 +1,8 @@
 angular.module 'Questboard.web.data', []
-.service 'QbData', ($q, $rootScope, $localStorage, QbClient, QbSession) ->
+.service 'QbData',
+($q, $state, $rootScope, $localStorage, QbClient, QbSession) ->
 
   self = @
-
-  f = no
 
   $rootScope.isGuest = ->
     $rootScope.loggedIn and !QbSession.token
@@ -18,6 +17,7 @@ angular.module 'Questboard.web.data', []
           self.loadUserData().then -> console.log self.posts
     else
       QbSession.guest()
+      self.loadUserData()
 
   @reauth = ->
     if not $localStorage.token then return $q.reject()
@@ -42,5 +42,8 @@ angular.module 'Questboard.web.data', []
     return $q.all(promises)
 
   @getLastUser = -> $localStorage.email  ? ''
+
+  @signup = (params) ->
+    QbClient.request('register', _.omit params, 'verify')
 
   return @

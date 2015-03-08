@@ -10,7 +10,14 @@ nav.navbar {
       max-width: (36 / 84) * 360px;
     }
   }
-  
+
   transition: transform 0.3s ease-out;
   &.nonav { transform: translateY(-90%); }
+
+  .user-dropdown {
+    cursor: pointer;
+    padding-right: 15px;
+    a.dropdown-toggle { color: white; }
+    .hoverable(@brand-primary);
+  }
 }
