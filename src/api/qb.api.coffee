@@ -22,6 +22,7 @@ angular.module 'Questboard.api', [
     deferred = $q.defer()
     @socket.emit(event, data)
     promises[data.nonce] = deferred
+    deferred._qb_event = event
     return deferred.promise
 
   # Server -> Client
@@ -32,6 +33,7 @@ angular.module 'Questboard.api', [
       console.log "Unrecognized promise: #{data.nonce}"
       return
     if data.errorcode
+      console.log deferred._qb_event
       deferred.reject data
     else
       deferred.resolve data

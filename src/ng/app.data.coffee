@@ -1,7 +1,12 @@
 angular.module 'Questboard.web.data', []
-.service 'QbData', ($q, $localStorage, QbClient, QbSession) ->
+.service 'QbData', ($q, $rootScope, $localStorage, QbClient, QbSession) ->
 
   self = @
+
+  f = no
+
+  $rootScope.isGuest = ->
+    $rootScope.loggedIn and !QbSession.token
 
   QbClient.socket.on 'update', -> self.loadUserData()
 
@@ -14,9 +19,17 @@ angular.module 'Questboard.web.data', []
     else
       QbSession.guest()
 
+  @reauth = ->
+    if not $localStorage.token then return $q.reject()
+    QbClient.request 'reauth', token: $localStorage.token
+      .success (data) ->
+        QbSession.create($localStorage.email, data.data, yes)
+        self.loadUserData()
+
+
   @loadUserData = ->
     promises = { }
-    if not QbSession.isGuest
+    if not $rootScope.isGuest()
       promises.user = QbClient.request('whoami', token: QbSession.token)
         .then (data) ->
           QbSession.user = data.data

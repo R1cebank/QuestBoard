@@ -19,6 +19,8 @@ angular.module 'Questboard.web.views.login', []
   # Detect last user to log in
   $scope.credentials.email = QbData.getLastUser()
 
+  QbData.reauth().then -> $state.go 'home'
+
   # Submit login form
   $scope.login = ->
     QbData.login $scope.credentials
