@@ -6,7 +6,7 @@
         input.form-control(type = 'search', placeholder = 'Search')
     
     ul.tasklist
-      li.post(ng-repeat = 'task in tasks()', ui-sref = 'home.post({post: task.postid})')
+      li.post(ng-repeat = 'task in tasks()', ui-sref = 'home.post({post: task.postid})', ui-sref-active = 'active')
         .post-info.clearfix
           .post-title.text-nowrap {{ task.title }}
           .post-time {{ task.date | ago }}

@@ -72,3 +72,7 @@ angular.module 'Questboard.web', [
 
 .config (snapRemoteProvider) ->
   snapRemoteProvider.globalOptions.disable = 'left'
+
+.run ($rootScope, snapRemote) ->
+
+  

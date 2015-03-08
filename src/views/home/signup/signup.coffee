@@ -8,6 +8,16 @@ angular.module 'Questboard.web.views.home.signup', []
     pass: ''
     verify: ''
 
+  $scope.submitButton =
+    'loading':
+      class: 'loading disabled'
+    'success':
+      class: 'success disabled'
+      callback: -> setTimeout((=> @state 'default'), 3000)
+    'error':
+      class: 'error disabled'
+      callback: -> setTimeout((=> @state 'default'), 3000)
+
   $scope.errmsg = null
 
   $scope.submit = ->

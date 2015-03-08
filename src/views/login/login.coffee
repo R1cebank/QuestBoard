@@ -10,6 +10,16 @@ angular.module 'Questboard.web.views.login', []
         $(@element).removeClass('shake').animate nothing:null, 1, ->
           $(@).addClass('shake')
 
+  $scope.loginButton =
+    'loading':
+      class: 'loading disabled'
+    'success':
+      class: 'success disabled'
+      callback: -> setTimeout((=> @state 'default'), 3000)
+    'error':
+      class: 'error disabled'
+      callback: -> setTimeout((=> @state 'default'), 3000)
+
   # Login Model
   $scope.credentials =
     email: ''
@@ -23,9 +33,13 @@ angular.module 'Questboard.web.views.login', []
 
   # Submit login form
   $scope.login = ->
+    $scope.loginButton.state 'loading'
     QbData.login $scope.credentials
-      .success (data) -> $state.go 'home'
+      .success (data) ->
+        $scope.loginButton.state()
+        $state.go 'home'
       .error (data) ->
+        $scope.loginButton.state()
         $scope.loginForm.state 'shake'
         $scope.credentials.password = ''
 

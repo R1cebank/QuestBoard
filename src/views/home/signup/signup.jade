@@ -32,5 +32,11 @@
     
     .center-buttons
       button.btn.btn-lg.btn-default(type = 'button', ui-sref = 'home') Cancel
-      button.btn.btn-lg.btn-success(type = 'submit') Submit
+      button.btn.btn-lg.btn-success.btn-loading(
+        qb-multistate = 'submitButton',
+        type = 'submit') 
+        span.icon.ion-loading-a.loading
+        span.icon.ion-checkmark-round.success
+        span.icon.ion-close-round.error
+        span.caption Submit
   

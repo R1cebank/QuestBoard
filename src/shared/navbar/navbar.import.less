@@ -14,10 +14,25 @@ nav.navbar {
   transition: transform 0.3s ease-out;
   &.nonav { transform: translateY(-90%); }
 
-  .user-dropdown {
+  .navbar-nav li {
     cursor: pointer;
     padding-right: 15px;
-    a.dropdown-toggle { color: white; }
+    a { color: white; }
     .hoverable(@brand-primary);
   }
+
+  button {
+    .hoverable(@brand-primary);
+    height: @navbar-height;
+    border: none;
+    padding: 0 15px;
+    color: white;
+    &:focus { outline: none; }
+  }
+}
+
+.icon.inline-lg {
+  font-size: 1.4em;
+  position: relative;
+  top: 4px;
 }

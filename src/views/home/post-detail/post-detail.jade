@@ -1,27 +1,27 @@
 .fragment#frag-view-post
 
-  h1 {{ post.title }}
+  h1.text-nowrap {{ post.title }}
   
   include ../celtic-sep.part.jade
   
   .post-owner.clearfix
-    img.profile-image.pull-left(qb-no-drag, qb-profile-img = '{{ post.uuid }}')
-    .post-greeting.lead(qb-greeting = '{{ post.postid }}')
+    img.profile-image(qb-no-drag, qb-profile-img = '{{ post.uuid }}')
+    .post-greeting
+      span.lead(qb-greeting = '{{ post.postid }}')
   
-  .post-body
-    h2 Objective
-    p {{ post.description }}
-    h2 Conditions
-    p Quest must be completed 
-      span.accent {{ post.endDate | ago }}
-      |  from now.
-    h2 Tags
-    div(ng-show = '!post.tags.length')
-      i.text-muted Quest owner did not specify any tags.
-    div
-      span.label.label-primary.label-lg(
-        ng-repeat = 'tag in post.tags track by $index'
-      ) {{ tag }}
+      h2 Objective
+      p {{ post.description }}
+      h2 Conditions
+      p Quest must be completed 
+        span.accent {{ post.endDate | ago }}
+        |  from now.
+      h2 Reward
+      span.reward.text-success {{ post.comp | currency:$:2 }}
+      
+  div.tag-list.text-right
+    span.label.label-default.label-lg(
+      ng-repeat = 'tag in post.tags track by $index'
+    ) {{ tag }}
     
   include ../celtic-sep.part.jade
     

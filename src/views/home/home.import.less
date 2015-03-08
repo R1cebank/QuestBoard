@@ -6,6 +6,7 @@
   [snap-drawer] {
     //background: #AAAAAA;
     background: #E8E8E8;
+    overflow-x: hidden;
   }
   [snap-content] {
     background: #F0F0F0;
@@ -29,13 +30,16 @@
     padding: 0;
 
     > li {
+      cursor: pointer;
       .hoverable(#FFF);
       padding: 15px;
       border-width: 1px 0 1px 0;
       border-style: solid;
       border-color: #DDD;
+      border-right: 4px solid transparent;
       &:first-of-type { border-top: none; }
       & + li { margin-top: -1px; }
+      &.active { border-right: 4px solid @brand-primary; }
     }
   }
 
@@ -85,7 +89,6 @@
 @media (min-width: @screen-sm-min) {
   [snap-content] {
     max-width: 300px;
-    transform: none!important;
   }
   .snap-drawer-right {
     left: 300px;
@@ -106,7 +109,7 @@
 
 .fragment {
   position: relative;
-  padding: 0 60px;
+  padding: 0 15px;
   padding-bottom: 30px;
 
   h1 {

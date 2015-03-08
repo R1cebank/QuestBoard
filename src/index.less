@@ -31,3 +31,37 @@ body > [ui-view] {
 }
 
 .accent { color: @brand-primary; }
+
+
+button.btn-loading {
+
+  .icon.loading,
+  .icon.error,
+  .icon.success { display: none; }
+
+  &.loading .icon.loading { display: inline-block; }
+  &.error .icon.error   { display: inline-block; }
+  &.success .icon.success { display: inline-block; }
+
+  &.loading .caption,
+  &.error .caption,
+  &.success .caption { display: none; }
+
+
+}
+
+body:after { color: transparent; }
+
+// JS Breakpoint detection
+@media (max-width: @screen-xs-max) {
+  body:after { content: 'xs'; }
+}
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  body:after { content: 'sm'; }
+}
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+  body:after { content: 'md'; }
+}
+@media (min-width: @screen-lg-min) {
+  body:after { content: 'lg'; }
+}

@@ -2,18 +2,13 @@ nav.navbar.navbar-default.navbar-fixed-top(
     ng-controller = 'NavbarController',
     ng-class = '{nonav: ("login" | isState)}'
   )
-  .navbar-header
-    a.navbar-brand
-      img(qb-no-drag, ng-show = 'loggedIn', src = 'assets/logotype-white.svg')
+  button.pull-left.visible-xs-inline-block(
+    ng-show = '("home.post" | isState) || ("home.signup" | isState)', 
+    ui-sref = 'home') 
+    span.icon.ion-arrow-left-c  BACK
+  
+  
+  a.navbar-brand.hidden-xs
+    img(qb-no-drag, ng-show = 'loggedIn', src = 'assets/logotype-white.svg')
 
-  ul.nav.navbar-nav.navbar-right(ng-show = 'loggedIn')
-    li.user-dropdown(dropdown, is-open = 'dropdown.isOpen')
-      a.dropdown-toggle(dropdown-toggle)
-        | {{ isGuest() ? 'The Strange One' : user().name }}
-        span.caret
-      ul.dropdown-menu
-        li.hidden
-          a SETTINGS
-        li
-          a(ng-click = 'logout()')
-            | LOG OUT
+  button.pull-right(ng-click = 'logout()') LOGOUT
