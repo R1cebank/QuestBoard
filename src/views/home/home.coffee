@@ -12,5 +12,3 @@ angular.module 'Questboard.web.views.home', [
 
   $scope.openDrawer = ->
     snapRemote.toggle('right')
-
-  undefined

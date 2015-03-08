@@ -3,6 +3,8 @@ angular.module 'Questboard.web.data', []
 
   self = @
 
+  QbClient.socket.on 'update', -> self.loadUserData()
+
   @login = (params) ->
     if params
       QbClient.request('login', _.pick params, 'email', 'password')
@@ -16,7 +18,8 @@ angular.module 'Questboard.web.data', []
     promises = { }
     if not QbSession.isGuest
       promises.user = QbClient.request('whoami', token: QbSession.token)
-        .then (data) -> QbSession.user = data.data
+        .then (data) ->
+          QbSession.user = data.data
         .error (error) -> console.log error
 
     promises.tasks = QbClient.request('queryall')

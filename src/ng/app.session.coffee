@@ -3,6 +3,7 @@ angular.module 'Questboard.web.session', []
 
   @create = (email, token, remember) ->
     @token = token
+    @isGuest = no
     $rootScope.loggedIn = yes
     if remember
       $localStorage.token = token

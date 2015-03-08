@@ -29,7 +29,7 @@ angular.module 'Questboard.api', [
     if not data then return
     deferred = promises[data.nonce]
     if not deferred
-      console.log 'Unrecognized promise.'
+      console.log "Unrecognized promise: #{data.nonce}"
       return
     if data.errorcode
       deferred.reject data

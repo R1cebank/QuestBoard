@@ -20,3 +20,10 @@ angular.module 'Questboard.web.routes', []
       templateUrl: 'views/home/post-detail/post-detail.html',
       controller: 'PostDetailController'
     )
+
+.run ($rootScope, $state) ->
+
+  $rootScope.$on '$stateChangeStart', (e, to) ->
+    if to.name isnt 'login' and not $rootScope.loggedIn
+      e.preventDefault()
+      $state.go 'login'

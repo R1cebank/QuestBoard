@@ -1,7 +1,6 @@
 .bounty-letter {
 
   background: #E8E8E8;
-  height: 600px;
 
   border-radius: 0;
   margin: 0;
@@ -10,6 +9,7 @@
   position: relative;
 
   padding: 0 60px;
+  padding-bottom: 30px;
 
   .corner-ne,
   .corner-nw {
@@ -90,8 +90,16 @@
 
   }
 
-
-  .post-body { font-size: 16px; }
+  .post-body {
+    h2 {
+      color: @brand-primary;
+      font-size: 16px;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+    .label + .label { margin-left: 5px; }
+    p { font-size: 15px; }
+  }
 }
 
 @media (max-width: @screen-xs-max) {
