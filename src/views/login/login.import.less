@@ -16,29 +16,33 @@
     }
 
     // Input forms
+
     .input-group {
       display: block;
       max-width: 360px;
       margin: 0 auto;
 
       input {
-        //border-width: 2px;
         position: relative;
         z-index: 0;
-        border-color: #999;
-        padding: 15px 24px;
-        height: 24px + 30px;
       }
       input:focus {
         z-index: 1;
-        border-color: @brand-highlight;
+        border-color: @brand-primary;
+        & + label { color: @brand-primary; }
       }
     }
     .input-group.top {
-      &, & > input { .border-top-radius(6px); }
+      &, & > input {
+        .border-bottom-radius(0);
+        .border-top-radius(6px);
+      }
     }
     .input-group.bottom {
-      &, & > input { .border-bottom-radius(6px); }
+      &, & > input {
+        .border-top-radius(0);
+        .border-bottom-radius(6px);
+      }
       & > input {
         margin-top: -1px;
       }

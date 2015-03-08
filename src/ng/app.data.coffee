@@ -51,4 +51,11 @@ angular.module 'Questboard.web.data', []
   @signup = (params) ->
     QbClient.request('register', _.omit params, 'verify')
 
+  @accept = (postid) ->
+    QbClient.request('accept', postid: postid, token: QbSession.token)
+      .success (data) ->
+        QbSession.user.accepted.push(postid)
+        $scope.accepted = yes
+      .error (error) -> console.log error
+
   return @

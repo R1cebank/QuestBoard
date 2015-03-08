@@ -6,18 +6,19 @@
       img.big-logo(qb-no-drag, src = 'assets/logotype-white.svg')
       
       .form-group.clearfix
-        .input-group.input-group-lg.top
+        .input-group.input-group-lg.top.clearfix(qb-float-label)
           input.form-control(
-            type = 'text', 
-            placeholder = 'email', 
-            ng-model = 'credentials.email'
+            type = 'text',
+            ng-model = 'credentials.email',
+            ng-class = '{"has-value": credentials.email }'
           )
-        .input-group.input-group-lg.bottom
+          label email
+        .input-group.input-group-lg.bottom.clearfix(qb-float-label)
           input.form-control(
-            type = 'password', 
-            placeholder = 'password', 
+            type = 'password',
             ng-model = 'credentials.password'
           )
+          label password
       
       button.btn.btn-lg.btn-block.btn-primary.btn-loading(
         type = 'submit',

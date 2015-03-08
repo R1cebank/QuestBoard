@@ -27,7 +27,14 @@
     
   button.btn.btn-lg.btn-block.btn-default(
     ng-show = 'ownedByMe() && !isGuest()') Edit Quest
-  button.btn.btn-lg.btn-block.btn-success(
-    ng-show = '!ownedByMe() && !isGuest()') Accept this Quest! 
+  button.btn.btn-lg.btn-block.btn-loading.btn-success(
+    ng-class = '{"btn-success": !accepted, "btn-danger": accepted}',
+    ng-show = '!ownedByMe() && !isGuest()',
+    qb-multistate = 'acceptButton',
+    ng-click = 'accept()')
+    span.icon.ion-loading-a.loading
+    span.icon.ion-checkmark-round.success
+    span.icon.ion-close-round.error
+    span.caption {{ accepted ? 'Abandon this Quest...' : 'Accept this Quest!' }}
   button.btn.btn-lg.btn-block.btn-success(
     ng-show = 'isGuest()', ui-sref = 'home.signup') Sign up to accept this Quest! 

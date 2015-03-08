@@ -102,7 +102,7 @@ angular.module 'Questboard.web.directives', []
   restrict: 'A'
   link: (scope, element) ->
     $(element).addClass 'float-label'
-    $(element).find('> input, > textarea').blur ->
+    $(element).find('> input, > textarea').change ->
       if not $(@).val()
         $(@).removeClass 'has-value'
       else
