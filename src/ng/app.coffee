@@ -4,6 +4,10 @@ angular.module 'Questboard.web', [
   'ui.bootstrap'
   'ngStorage'
   'wyvernzora.un-svg'
+  'monospaced.elastic'
+
+  'ngAnimate'
+  'anim-in-out'
 
   'Questboard.api'
 
@@ -74,5 +78,3 @@ angular.module 'Questboard.web', [
   snapRemoteProvider.globalOptions.disable = 'left'
 
 .run ($rootScope, snapRemote) ->
-
-  

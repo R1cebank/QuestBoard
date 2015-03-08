@@ -12,7 +12,8 @@
 @import "views/home/home.import.less";
 
 body {
-  padding-top: @navbar-height;
+  background-image: url(assets/map-bg-2.jpeg);
+  background-size: cover;
 }
 
 // Position ui-view accordingly
@@ -64,4 +65,57 @@ body:after { color: transparent; }
 }
 @media (min-width: @screen-lg-min) {
   body:after { content: 'lg'; }
+}
+
+//
+.input-group.input-group-lg.float-label {
+
+  background: white;
+
+  > input,
+  > textarea {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 0;
+    background: none;
+  }
+
+  position: relative;
+
+  > input,
+  > textarea {
+    height: 56px;
+    padding: 16px 10px 16px 10px;
+    border: 1px solid #DDD;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    & + label {
+      position: absolute;
+      left: 12px;
+      top: 16px;
+      font-size: 18px;
+      font-weight: 300;
+      color: @gray-light;
+      transition: all 0.3s ease;
+    }
+  }
+  > input:focus,
+  > textarea:focus {
+      border-color: lighten(@brand-highlight, 20%);
+      & + label { color: @brand-highlight; }
+    }
+  > input:focus,
+  > input.has-value,
+  > textarea:focus,
+  > textarea.has-value {
+    padding: 23px 10px 9px 10px;
+    & + label {
+      top: 5px;
+      font-size: 12px;
+    }
+  }
+
+
+
 }

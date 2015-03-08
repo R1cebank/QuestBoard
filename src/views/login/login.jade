@@ -1,35 +1,36 @@
 .view#view-login
   
-  form.login-form(name = 'login-form', qb-multistate = 'loginForm')
-    
-    img.big-logo(qb-no-drag, src = 'assets/logotype-white.svg')
-    
-    .form-group.clearfix
-      .input-group.input-group-lg.top
-        input.form-control(
-          type = 'text', 
-          placeholder = 'email', 
-          ng-model = 'credentials.email'
-        )
-      .input-group.input-group-lg.bottom
-        input.form-control(
-          type = 'password', 
-          placeholder = 'password', 
-          ng-model = 'credentials.password'
-        )
-    
-    button.btn.btn-lg.btn-block.btn-primary.btn-loading(
-      type = 'submit',
-      ng-click = 'login()',
-      qb-multistate = 'loginButton'
-    ) 
-      span.icon.ion-load-a.animate-spin.loading
-      span.icon.ion-checkmark-round.success
-      span.icon.ion-close-round.error
-      span.caption LOGIN
-    
-    .celtic-sep
-      img.glyph(src = 'assets/separator-glyph.svg')
-    
-    button.btn.btn-lg.btn-block.btn-default(type = 'button', ng-click = 'guest()') 
-      | Continue as Guest
+  ui-view
+    form.login-form.anim-zoom-out(name = 'login-form', qb-multistate = 'loginForm')
+      
+      img.big-logo(qb-no-drag, src = 'assets/logotype-white.svg')
+      
+      .form-group.clearfix
+        .input-group.input-group-lg.top
+          input.form-control(
+            type = 'text', 
+            placeholder = 'email', 
+            ng-model = 'credentials.email'
+          )
+        .input-group.input-group-lg.bottom
+          input.form-control(
+            type = 'password', 
+            placeholder = 'password', 
+            ng-model = 'credentials.password'
+          )
+      
+      button.btn.btn-lg.btn-block.btn-primary.btn-loading(
+        type = 'submit',
+        ng-click = 'login()',
+        qb-multistate = 'loginButton'
+      ) 
+        span.icon.ion-load-a.animate-spin.loading
+        span.icon.ion-checkmark-round.success
+        span.icon.ion-close-round.error
+        span.caption LOGIN
+      
+      .celtic-sep
+        img.glyph(src = 'assets/separator-glyph.svg')
+      
+      button.btn.btn-lg.btn-block.btn-default(type = 'button', ng-click = 'guest()') 
+        | Continue as Guest

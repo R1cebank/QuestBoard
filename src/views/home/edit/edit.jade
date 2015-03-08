@@ -1,8 +1,27 @@
 .fragment#frag-edit
   
-  
+  h1 Make Your Own Quest
   
   include ../celtic-sep.part.jade
+  
+  p.text-justify.text-muted.
+    Here you can offer a reward for any task you want a hand with,
+    no matter how large or small. Adventurers passing by will notice
+    your reward and come to your help!
+  
+  .input-group.input-group-lg.clearfix(qb-float-label)
+    input.form-control(type = 'text', name = 'title')
+    label(for = 'title') Title of your Quest
+  
+  .input-group.input-group-lg.clearfix(qb-float-label)
+    input.form-control(type = 'text', name = 'title')
+    label(for = 'title') Quest Deadline
+  
+  .input-group.input-group-lg.clearfix(qb-float-label)
+    textarea.form-control(type = 'text', name = 'title')
+    label(for = 'title') Detailed Quest Objectives
+  
+
   
   include ../celtic-sep.part.jade
   

@@ -97,3 +97,13 @@ angular.module 'Questboard.web.directives', []
       scope.other is val
 
     scope.$watch 'other', -> model.$validate()
+
+.directive 'qbFloatLabel', ->
+  restrict: 'A'
+  link: (scope, element) ->
+    $(element).addClass 'float-label'
+    $(element).find('> input, > textarea').blur ->
+      if not $(@).val()
+        $(@).removeClass 'has-value'
+      else
+        $(@).addClass 'has-value'

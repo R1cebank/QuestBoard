@@ -1,4 +1,5 @@
-angular.module 'Questboard.web.views.login', []
+angular.module 'Questboard.web.views.login', [
+]
 .controller 'LoginController', ($scope, $state, QbData) ->
 
   # Login form multistate

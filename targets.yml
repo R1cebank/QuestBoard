@@ -25,7 +25,11 @@ default:
       - angular-snap/angular-snap.js
       - angular-un-svg/dist/un-svg.js
       - seedrandom/seedrandom.js
+      - angular-elastic/elastic.js
+      - angular-animate/angular-animate.js
+      - angular-ui-router-anim-in-out/anim-in-out.js
     stylesheets:
+      - angular-ui-router-anim-in-out/css/anim-in-out.css
       - bootstrap/dist/css/bootstrap.css
       - angular-snap/angular-snap.css
     fonts:
@@ -54,6 +58,7 @@ development:
     - shared/shared.js
     - shared/navbar/navbar.js
     - views/login/login.js
+    - views/login/signup/signup.js
     - views/home/home.js
     - views/home/post-detail/post-detail.js
     - views/home/signup/signup.js

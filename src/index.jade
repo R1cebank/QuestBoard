@@ -12,7 +12,7 @@ html
     ng-include(src = '"shared/navbar/navbar.html"')
     
     
-    div(ui-view, ng-class = '{nonav: ("login" | isState)}')
+    div.anim-in-out.anim-fade(ui-view, ng-class = '{nonav: ("login" | isState)}')
     
     each url in scripts
       script(src = url)

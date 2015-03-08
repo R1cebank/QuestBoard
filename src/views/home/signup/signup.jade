@@ -8,22 +8,28 @@
   form(name = 'signup', ng-submit = 'submit()')
     
     h2.text-center About You
-  
-    .input-group.input-group-lg.clearfix
-      input.form-control(type = 'text', placeholder = 'Name', ng-model = 'data.name', required)
     
-    .input-group.input-group-lg.clearfix
-      input.form-control(type = 'email', placeholder = 'Email Address', ng-model = 'data.email', required)
+    .input-group.input-group-lg.clearfix(qb-float-label)
+      input.form-control(name = 'name', type = 'text', ng-model = 'data.name', required)
+      label Name
+    
+    .input-group.input-group-lg.clearfix(qb-float-label)
+      input.form-control(type = 'email', ng-model = 'data.email', required)
+      label Email Address
 
-    .input-group.input-group-lg.clearfix
-      input.form-control(type = 'tel', placeholder = 'Phone Number', ng-model = 'data.phone', required)
+    .input-group.input-group-lg.clearfix(qb-float-label)
+      input.form-control(type = 'tel', ng-model = 'data.phone', required)
+      label Phone Number
         
     h2.text-center Your Password
         
-    .input-group.input-group-lg.clearfix
-      input.form-control(type = 'password', placeholder = 'Password', ng-model = 'data.pass', required)
-    .input-group.input-group-lg.clearfix
-      input.form-control.share-top(type = 'password', placeholder = 'Verify', ng-model = 'data.verify', compareTo = 'data.pass', required)
+    .input-group.input-group-lg.clearfix(qb-float-label)
+      input.form-control(type = 'password', ng-model = 'data.pass', required)
+      label Password
+      
+    .input-group.input-group-lg.clearfix(qb-float-label)
+      input.form-control.share-top(type = 'password', ng-model = 'data.verify', compareTo = 'data.pass', required)
+      label Verify Password
       
     include ../celtic-sep.part.jade  
     
