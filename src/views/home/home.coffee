@@ -1,6 +1,7 @@
 angular.module 'Questboard.web.views.home', [
   'Questboard.web.views.home.post-detail'
   'Questboard.web.views.home.signup'
+  'Questboard.web.views.home.edit'
 ]
 .controller 'HomeController',
 ($scope, $rootScope, snapRemote, QbSession, QbData) ->

@@ -33,7 +33,7 @@ angular.module 'Questboard.api', [
       console.log "Unrecognized promise: #{data.nonce}"
       return
     if data.errorcode
-      console.log deferred._qb_event
+      console.log deferred._qb_event, data
       deferred.reject data
     else
       deferred.resolve data

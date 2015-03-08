@@ -26,6 +26,12 @@ angular.module 'Questboard.web.routes', []
       templateUrl: 'views/home/signup/signup.html',
       controller: 'SignupController'
     )
+    .state(
+      'home.edit',
+      url: 'edit?post',
+      templateUrl: 'views/home/edit/edit.html',
+      controller: 'EditController'
+    )
 
   $urlRouterProvider.otherwise ''
 

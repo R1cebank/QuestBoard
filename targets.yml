@@ -57,6 +57,7 @@ development:
     - views/home/home.js
     - views/home/post-detail/post-detail.js
     - views/home/signup/signup.js
+    - views/home/edit/edit.js
     - index.js
 
   # Development-specific stylesheets

@@ -35,8 +35,13 @@ angular.module 'Questboard.web.data', []
           QbSession.user = data.data
         .error (error) -> console.log error
 
-    promises.tasks = QbClient.request('queryall')
-      .then (data) -> self.posts = _.indexBy data.data, 'postid'
+    param =
+      type: 'Point'
+      coordinates: [-86.91024, 40.42601]
+
+    promises.tasks = QbClient.request('geosearch', {location: param, maxDist: 3000})
+      .then (data) ->
+        self.posts = _.indexBy data.data, 'postid'
       .error (error) -> console.log error
 
     return $q.all(promises)
