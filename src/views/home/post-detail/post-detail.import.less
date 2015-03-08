@@ -1,6 +1,6 @@
 .bounty-letter {
 
-  background: #F1F1F1;
+  background: #E8E8E8;
   height: 600px;
 
   border-radius: 0;
@@ -9,8 +9,13 @@
 
   position: relative;
 
+  padding: 0 60px;
+
   .corner-ne,
-  .corner-nw { position: absolute; }
+  .corner-nw {
+    position: absolute;
+    z-index: 0;
+  }
   .corner-ne {
     right: 30px;
     top: 30px;
@@ -20,21 +25,96 @@
     top: 30px;
   }
 
+  h1.post-title {
+    margin-top: 0;
+    text-align: center;
+    font-weight: lighter;
+    padding-top: 32px;
+    text-transform: capitalize;
+  }
+
+  .celtic-sep {
+    position: relative;
+    min-height: 20px;
+    margin: 20px -60px;
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      top: 50%;
+      width: 40%;
+      //background: #AAA;
+    }
+    &:before {
+      left: 30px;
+      background-image: linear-gradient(to left, rgba(170,170,170,1) 0%,rgba(0,0,0,0) 100%);
+    }
+    &:after {
+      right: 30px;
+      background-image: linear-gradient(to right, rgba(170,170,170,1) 0%,rgba(0,0,0,0) 100%);
+    }
+    .glyph {
+      polygon, path { fill: #AAA; }
+      max-width: 35px;
+      max-height: (35 / 503) * 281px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  .post-owner {
+    img.profile-image {
+      .square(64px);
+      border: 4px solid #FFF;
+    }
+    .post-greeting {
+      border-radius: 2px;
+      position: relative;
+      margin-left: 85px;
+      padding: 18px;
+      background: #FFFFFF;
+      &:after {
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #FFFFFF;
+        display: block;
+        width: 0;
+        z-index: 1;
+        margin-top: -10px;
+        left: -10px;
+        top: 50%;
+      }
+    }
+
+  }
+
+
+  .post-body { font-size: 16px; }
 }
 
 @media (max-width: @screen-xs-max) {
-
-
+  .bounty-letter {
+    .post-title { font-size: 24px; }
+  }
 }
 
 @media (min-width: @screen-sm-min) {
-  
+  .bounty-letter {
+    .post-title { font-size: 24px; }
+  }
 }
 
 @media (min-width: @screen-md-min) {
   .bounty-letter {
     border-radius: 2px;
     margin: 30px;
+    .post-title {
+      padding-left: 30px;
+      padding-right: 30px;
+      font-size: 28px;
+    }
   }
 }
 
@@ -42,5 +122,10 @@
   .bounty-letter {
     width: 800px;
     margin: 30px auto;
+    .post-title {
+      padding-left: 60px;
+      padding-right: 60px;
+      font-size: 32px;
+    }
   }
 }

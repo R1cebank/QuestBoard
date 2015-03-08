@@ -7,12 +7,10 @@
     
     ul.tasklist
       li.post(ng-repeat = 'task in tasks()', ui-sref = 'home.post({post: task.postid})')
-        .post-info
+        .post-info.clearfix
+          .post-title.text-nowrap {{ task.title }}
           .post-time {{ task.date | ago }}
-          .post-title {{ task.title }}
-          .post-tags
-            span.label.label-default.label-xs(ng-repeat = 'tag in task.tags | limitTo:3') 
-              | {{ tag }}
+        .post-reward {{ task.comp | currency:$:2 }} 
 
               
   div(snap-drawers)

@@ -24,6 +24,7 @@ default:
       - snapjs/snap.js
       - angular-snap/angular-snap.js
       - angular-un-svg/dist/un-svg.js
+      - seedrandom/seedrandom.js
     stylesheets:
       - bootstrap/dist/css/bootstrap.css
       - angular-snap/angular-snap.css

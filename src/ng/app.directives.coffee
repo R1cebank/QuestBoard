@@ -50,3 +50,40 @@ angular.module 'Questboard.web.directives', []
     model = $parse(attrs.ckAutoFocus)
     scope.$watch model, (value) ->
       if value then $timeout(-> element[0].focus())
+
+# --------------------------------------------------------------------------- #
+# UUID -> Email Hash -> Profile Image                                         #
+# --------------------------------------------------------------------------- #
+.directive 'qbProfileImg', (QbClient) ->
+  restrict: 'A'
+  scope:
+    src: '@qbProfileImg'
+  link: (scope, element, attr) ->
+
+    QbClient.request('emailhash', uuid: scope.src)
+      .success (data) ->
+        url = "http://www.gravatar.com/avatar/#{data.data}?size=64"
+        $(element).attr 'src', url
+      .error (error) ->
+        $(element).attr 'src', 'assets/default-profile.png'
+
+
+.directive 'qbGreeting', (QbGreetings) ->
+  restrict: 'A'
+  scope:
+    seed: '@qbGreeting'
+  link: (scope, element, attr) ->
+    Math.seedrandom(scope.seed)
+
+    str = ''
+    # Append the greeting
+    str += QbGreetings.greets[Math.floor(
+      Math.random() * QbGreetings.greets.length)] + ', '
+    # Append the adjective
+    str += QbGreetings.adjs[Math.floor(
+      Math.random() * QbGreetings.adjs.length)] + ' '
+    # Append the subject
+    str += QbGreetings.subs[Math.floor(
+      Math.random() * QbGreetings.subs.length)] + '!'
+      
+    $(element).text(str)
